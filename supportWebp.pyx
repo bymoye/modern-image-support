@@ -43,7 +43,7 @@ cpdef bint check_Version(char* ua):
 cdef int strindex(char* a,char* b) nogil:
     cdef int n = 0
     cdef int len = strlen(a)
-    cdef __int64 result = -1
+    cdef int result = -1
     if len > 0:
         result = strstr(a, b) - a
     if 0 <= result <= len:
