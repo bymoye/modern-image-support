@@ -2,14 +2,14 @@
 Quickly determine whether Webp is supported from UserAgent.
 
 ## support webp browser list
-FireFox >= 65
-Chrome >= 32
-Edge >= 18
-AppleWebKit >= 605      # Safari 14
-OPR >= 19
-UCBrowser >= 12
-SamsungBrowser >= 4
-QQBrowser >= 10
+- FireFox >= 65
+- Chrome >= 32
+- Edge >= 18
+- AppleWebKit >= 605      # Safari 14
+- OPR >= 19
+- UCBrowser >= 12
+- SamsungBrowser >= 4
+- QQBrowser >= 10
 
 ## using
 `check_Version(userAgent: bytes) -> bool`
