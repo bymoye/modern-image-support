@@ -20,7 +20,7 @@ cpdef bint check_Version(char* ua):
     cdef map[char*,int].iterator it = version_list_c.begin()
     cdef char* key
     cdef int value
-    cdef char[5] ua_version = ''
+    cdef char[5] ua_version
     cdef int i1 = 0
     cdef int index
     with nogil:
@@ -32,12 +32,12 @@ cpdef bint check_Version(char* ua):
                 preincrement(it)
                 continue
             i1 = index+strlen(key) + 1
+            memset(&ua_version[0], 0, sizeof(ua_version))
             while b'0' <= ua[i1] <= b'9':
                 ua_version[strlen(ua_version)] = ua[i1]
                 i1 += 1
             if atoi(ua_version) >= value:
                 return True
-            memset(ua_version,0,strlen(ua_version));
             preincrement(it)
 
 cdef int strindex(char* a,char* b) nogil:
