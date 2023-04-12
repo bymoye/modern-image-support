@@ -4,41 +4,39 @@ from libcpp.map cimport map
 from cython.operator cimport dereference, preincrement
 from libc.string cimport strstr,strlen,memset
 from libc.stdlib cimport atoi,rand,srand
-version_list = {b'Firefox':65,
-                b'Chrome':32,
-                b'Edge':18,
-                b'AppleWebKit':605, # Safari 14
-                b'OPR':19,
-                b'UCBrowser':12,
-                b'SamsungBrowser':4,
-                b'QQBrowser':10,
-                }
-cdef map[char*, int] version_list_c
-version_list_c = version_list
-cpdef bint check_Version(char* ua):
-    cdef map[char*,int].iterator end = version_list_c.end()
-    cdef map[char*,int].iterator it = version_list_c.begin()
-    cdef char* key
-    cdef int value
+
+
+cdef struct BrowserVersion:
+    char* name
+    int version
+
+cdef BrowserVersion[8] version_list = [
+    BrowserVersion(b'Firefox', 65),
+    BrowserVersion(b'Chrome', 32),
+    BrowserVersion(b'Edge', 18),
+    BrowserVersion(b'AppleWebKit', 605), # Safari 14
+    BrowserVersion(b'OPR', 19),
+    BrowserVersion(b'UCBrowser', 12),
+    BrowserVersion(b'SamsungBrowser', 4),
+    BrowserVersion(b'QQBrowser', 10)
+]
+
+cpdef bint check_version(char* ua):
     cdef char[5] ua_version
     cdef int i1 = 0
     cdef int index
     with nogil:
-        while it != end:
-            key = dereference(it).first
-            value = dereference(it).second
-            index = strindex(ua, dereference(it).first)
+        for i in version_list:
+            index = strindex(ua, i.name)
             if index == -1:
-                preincrement(it)
                 continue
-            i1 = index+strlen(key) + 1
+            i1 = index + strlen(i.name) + 1
             memset(&ua_version[0], 0, sizeof(ua_version))
             while b'0' <= ua[i1] <= b'9':
                 ua_version[strlen(ua_version)] = ua[i1]
                 i1 += 1
-            if atoi(ua_version) >= value:
+            if atoi(ua_version) >= i.version:
                 return True
-            preincrement(it)
 
 cdef int strindex(char* a,char* b) nogil:
     cdef int n = 0
