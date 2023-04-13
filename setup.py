@@ -1,36 +1,39 @@
 from setuptools import setup, Extension
 from Cython.Build import cythonize
 
+ext_modules = [
+    Extension(
+        "webp_support",
+        sources=["webp_support.pyx", "webp_support_c.c"],
+        extra_compile_args=["-O3"],
+        extra_link_args=["-O3"],
+    ),
+]
+
 setup(
-    name="supportWebp",
+    name="WebP Support",
     ext_modules=cythonize(
-        Extension(
-            name="supportWebp",
-            sources=["supportWebp.pyx"],
-            language=["c++"],
-            extra_compile_args=["-O2"],
-        ),
+        ext_modules,
+        language_level=3,
         compiler_directives={
-            'language_level': 3,
-            'boundscheck': False,
-            'wraparound': False
+            "language_level": 3,
+            "boundscheck": False,
+            "wraparound": False,
         },
     ),
     author="bymoye",
     author_email="s3moye@gmail.com",
-    version="0.0.1",
+    version="0.0.2",
     description="Quickly determine whether Webp is supported from UserAgent.",
     license="MIT",
     classifiers=[
-    "Development Status :: 5 - Production/Stable",
-    "Programming Language :: Python :: 3.6",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Cython",
-    "Programming Language :: C++",
-    "Topic :: Software Development :: Libraries :: Python Modules",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Cython",
+        "Programming Language :: C",
+        "Topic :: Software Development :: Libraries :: Python Modules",
     ],
-    python_requires='>=3.6'
+    python_requires=">=3.8",
 )
