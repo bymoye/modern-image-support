@@ -9,7 +9,7 @@ struct browser_version
     int min_version;
 };
 
-const struct browser_version browser_versions[] = {
+static const struct browser_version browser_versions[] = {
     {"Firefox", 65},
     {"Chrome", 32},
     {"Edge", 18},
@@ -18,6 +18,8 @@ const struct browser_version browser_versions[] = {
     {"UCBrowser", 12},
     {"SamsungBrowser", 4},
     {"QQBrowser", 10}};
+
+#define BROWSER_VERSION_COUNT (sizeof(browser_versions) / sizeof(browser_versions[0]))
 
 bool is_webp_supported(const char *user_agent)
 {
@@ -29,9 +31,7 @@ bool is_webp_supported(const char *user_agent)
     const char *found;
     const char *version;
     int version_number;
-    size_t num_browsers = sizeof(browser_versions) / sizeof(browser_versions[0]);
-
-    for (size_t i = 0; i < num_browsers; i++)
+    for (size_t i = 0; i < BROWSER_VERSION_COUNT; i++)
     {
         found = strstr(user_agent, browser_versions[i].name);
         if (found != NULL)

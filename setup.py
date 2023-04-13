@@ -25,7 +25,8 @@ setup(
     author_email="s3moye@gmail.com",
     version="0.0.2",
     url="https://github.com/bymoye/webp_support",
-    description="Quickly determine whether Webp is supported from UserAgent.",
+    description="A Quickly determine whether Webp is supported from UserAgent.",
+    long_description="A Quickly determine whether Webp is supported from UserAgent.",
     license="MIT",
     classifiers=[
         "Programming Language :: Python :: 3.8",
