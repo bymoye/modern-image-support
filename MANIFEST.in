@@ -1,0 +1,4 @@
+include *.pyx
+include *.pyi
+include *.c
+include *.h

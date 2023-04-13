@@ -24,6 +24,7 @@ setup(
     author="bymoye",
     author_email="s3moye@gmail.com",
     version="0.0.2",
+    url="https://github.com/bymoye/webp_support",
     description="Quickly determine whether Webp is supported from UserAgent.",
     license="MIT",
     classifiers=[
