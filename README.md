@@ -1,4 +1,4 @@
-# supportWebp
+# webp_supported
 
 Quickly determine whether Webp is supported from UserAgent.
 
