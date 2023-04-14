@@ -145,7 +145,6 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     needs: [build, build-wheels]
-    if: github.event_name == 'release'
     steps:
       - name: Download a distribution artifact
         uses: actions/download-artifact@v2
