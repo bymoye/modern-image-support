@@ -117,13 +117,23 @@ jobs:
         run: |
           cython webp_support.pyx
 
-      - name: Build wheels (linux)
-        if: startsWith(matrix.os, 'ubuntu')
-        uses: docker://quay.io/pypa/manylinux2014_x86_64
-        env:
-          PYTHON_VERSION: ${{ matrix.python-version }}
-        with:
-          entrypoint: /github/workspace/.github/workflows/build-manylinux-wheels.sh
+      # - name: Build wheels (linux)
+      #   if: startsWith(matrix.os, 'ubuntu')
+      #   uses: docker://quay.io/pypa/manylinux2014_x86_64
+      #   env:
+      #     PYTHON_VERSION: ${{ matrix.python-version }}
+      #   with:
+      #     entrypoint: /github/workspace/.github/workflows/build-manylinux-wheels.sh
+
+    - name: Build wheels (linux)
+      if: startsWith(matrix.os, 'ubuntu')
+      env:
+        PYTHON_VERSION: ${{ matrix.python-version }}
+      run: |
+        docker run \
+          -v "${PWD}:/mnt" \
+          quay.io/pypa/manylinux2014_x86_64 \
+          /mnt/.github/workflows/build-manylinux-wheels.sh
 
       - name: Build wheels (non-linux)
         if: "!startsWith(matrix.os, 'ubuntu')"
