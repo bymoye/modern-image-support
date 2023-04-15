@@ -1,10 +1,14 @@
 from setuptools import setup, Extension
 from Cython.Build import cythonize
 
+def readme():
+    with open("README.md") as f:
+        return f.read()
+
 ext_modules = [
     Extension(
-        "webp_support",
-        sources=["webp_support.pyx", "webp_support_c.c"],
+        "webp_support.webp_support",
+        sources=["webp_support/webp_support.pyx", "webp_support/webp_support_c.c"],
         extra_compile_args=["-O3"],
         extra_link_args=["-O3"],
     ),
@@ -21,14 +25,15 @@ setup(
             "wraparound": False,
         },
     ),
-    package_data={'': ['*.pyi', "*.pyx","*.c","*.h"]},
+    package_data={'': ['webp_support/*.pyi', "webp_support/*.pyx","webp_support/*.c","webp_support/*.h"]},
     include_package_data=True,
     author="bymoye",
     author_email="s3moye@gmail.com",
-    version="0.2.4",
+    version="0.2.5",
     url="https://github.com/bymoye/webp_support",
     description="A Quickly determine whether Webp is supported from UserAgent.",
-    long_description="A Quickly determine whether Webp is supported from UserAgent.",
+    long_description=readme(),
+    long_description_content_type="text/markdown",
     license="MIT",
     classifiers=[
         "Programming Language :: Python :: 3.8",
@@ -40,4 +45,5 @@ setup(
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
     python_requires=">=3.8",
+    packages=["webp_support"]
 )

@@ -1,4 +1,4 @@
-include *.pyx
-include *.pyi
-include *.c
-include *.h
+include webp_support/*.pyx
+include webp_support/*.pyi
+include webp_support/*.c
+include webp_support/*.h

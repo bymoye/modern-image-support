@@ -9,7 +9,7 @@ build-backend = "setuptools.build_meta"
 
 [metadata]
 name = "webp_support"
-version = "0.2.4"
+version = "0.2.5"
 author = "bymoye"
 author_email = "s3moye@gmail.com"
 readme = "README.md"
