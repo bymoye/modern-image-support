@@ -21,7 +21,7 @@ setup(
             "wraparound": False,
         },
     ),
-    package_data={'webp_support': ['*.pyi', "*.pyx","*.c","*.h"]},
+    package_data={'': ['*.pyi', "*.pyx","*.c","*.h"]},
     include_package_data=True,
     author="bymoye",
     author_email="s3moye@gmail.com",
