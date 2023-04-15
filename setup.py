@@ -11,7 +11,7 @@ ext_modules = [
 ]
 
 setup(
-    name="WebP Support",
+    name="webp_support",
     ext_modules=cythonize(
         ext_modules,
         language_level=3,
@@ -21,9 +21,10 @@ setup(
             "wraparound": False,
         },
     ),
+    package_data={'webp_support': ['*.pyi', "*.pyx"]},
     author="bymoye",
     author_email="s3moye@gmail.com",
-    version="0.2.1",
+    version="0.2.2",
     url="https://github.com/bymoye/webp_support",
     description="A Quickly determine whether Webp is supported from UserAgent.",
     long_description="A Quickly determine whether Webp is supported from UserAgent.",
