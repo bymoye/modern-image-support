@@ -23,7 +23,7 @@ setup(
     ),
     author="bymoye",
     author_email="s3moye@gmail.com",
-    version="0.0.2",
+    version="0.2.1",
     url="https://github.com/bymoye/webp_support",
     description="A Quickly determine whether Webp is supported from UserAgent.",
     long_description="A Quickly determine whether Webp is supported from UserAgent.",

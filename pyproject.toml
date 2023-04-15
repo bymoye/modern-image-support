@@ -9,7 +9,7 @@ build-backend = "setuptools.build_meta"
 
 [metadata]
 name = "webp_support"
-version = "0.2.0"
+version = "0.2.1"
 author = "bymoye"
 author_email = "s3moye@gmail.com"
 description = "Quickly determine whether Webp is supported from UserAgent."
