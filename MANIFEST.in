@@ -2,7 +2,3 @@ include *.pyx
 include *.pyi
 include *.c
 include *.h
-recursive-include *.pyx
-recursive-include *.pyi
-recursive-include *.c
-recursive-include *.h

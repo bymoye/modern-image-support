@@ -22,6 +22,7 @@ setup(
         },
     ),
     package_data={'webp_support': ['*.pyi', "*.pyx","*.c","*.h"]},
+    include_package_data=True,
     author="bymoye",
     author_email="s3moye@gmail.com",
     version="0.2.3",
