@@ -7,7 +7,7 @@ def readme():
 
 ext_modules = [
     Extension(
-        "webp_support.webp_support",
+        "webp_support",
         sources=["webp_support/webp_support.pyx", "webp_support/webp_support_c.c"],
         extra_compile_args=["-O3"],
         extra_link_args=["-O3"],
