@@ -7,7 +7,7 @@ def readme():
 
 ext_modules = [
     Extension(
-        "webp_support",
+        "",
         sources=["webp_support/webp_support.pyx", "webp_support/webp_support_c.c"],
         extra_compile_args=["-O3"],
         extra_link_args=["-O3"],
@@ -29,7 +29,7 @@ setup(
     include_package_data=True,
     author="bymoye",
     author_email="s3moye@gmail.com",
-    version="0.2.5-2",
+    version="0.2.5.post3",
     url="https://github.com/bymoye/webp_support",
     description="A Quickly determine whether Webp is supported from UserAgent.",
     long_description=readme(),
