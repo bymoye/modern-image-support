@@ -1,4 +1,6 @@
 build/
 dist/
+venv
 WebP_Support.egg-info/
 webp_support.c
+*.so
