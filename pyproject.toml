@@ -1,20 +1,33 @@
 [build-system]
-requires = ["setuptools", "wheel","cython"]
+requires = ["setuptools", "wheel", "cython==3.1.2"]
 build-backend = "setuptools.build_meta"
 
-[tool.build-system]
-requires = ["setuptools", "wheel","cython"]
-build-backend = "setuptools.build_meta"
-
-
-[metadata]
-name = "webp_support"
-version = "0.3.0"
-author = "bymoye"
-author_email = "s3moye@gmail.com"
+[project]
+name = "modern-image-support"
+version = "0.4.0"
+authors = [
+    {name = "bymoye", email = "s3moye@gmail.com"}
+]
+description = "Quickly determine WebP and AVIF image format support from UserAgent strings."
 readme = "README.md"
-description = "Quickly determine whether Webp is supported from UserAgent."
-url = "https://github.com/bymoye/webp_support"
+license = "MIT"
+requires-python = ">=3.9"
+keywords = ["webp", "avif", "image", "user-agent", "browser-detection"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Operating System :: OS Independent",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
 
-[options]
-python_requires = ">=3.8"
+[project.urls]
+Homepage = "https://github.com/bymoye/modern-image-support"
+Repository = "https://github.com/bymoye/modern-image-support"
+"Bug Tracker" = "https://github.com/bymoye/modern-image-support/issues"

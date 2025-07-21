@@ -1,5 +1,6 @@
-include webp_support/webp_support.pyx
-include webp_support/webp_support.pxd
-include webp_support/webp_support.pyi
-include webp_support/webp_support_c.c
-include webp_support/webp_support_c.h
+include modern_image_support/modern_image_support.pyx
+include modern_image_support/modern_image_support.pxd
+include modern_image_support/modern_image_support.pyi
+include modern_image_support/modern_image_support_c.h
+include LICENSE
+include README.md
