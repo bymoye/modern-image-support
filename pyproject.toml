@@ -5,9 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "modern-image-support"
 version = "0.4.0"
-authors = [
-    {name = "bymoye", email = "s3moye@gmail.com"}
-]
+authors = [{ name = "bymoye", email = "s3moye@gmail.com" }]
 description = "Quickly determine WebP and AVIF image format support from UserAgent strings."
 readme = "README.md"
 license = "MIT"
