@@ -24,33 +24,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os:
-          [
-            ubuntu-latest,
-            ubuntu-24.04-arm,
-            windows-latest,
-            macos-13,
-            macos-latest,
-          ]
-        python-version:
-          [
-            "3.9",
-            "3.10",
-            "3.11",
-            "3.12",
-            "3.13",
-            "3.14",
-            "pypy3.9",
-            "pypy3.10",
-            "pypy3.11",
-          ]
-        exclude:
-          # ARM Ubuntu doesn't support all Python versions
-          - os: ubuntu-24.04-arm
-            python-version: "pypy3.9"
-          # macOS 13 doesn't support Python 3.14 yet
-          - os: macos-13
-            python-version: "3.14"
+        os: [ubuntu-latest, ubuntu-24.04-arm, windows-latest, macos-latest]
+        python-version: ["3.13", "3.14", "pypy3.11"]
 
     steps:
       - uses: actions/checkout@v4
@@ -93,7 +68,7 @@ jobs:
       - name: Build wheels
         uses: pypa/cibuildwheel@v3.0.1
         env:
-          CIBW_BUILD: cp39-* cp310-* cp311-* cp312-* cp313-* cp314-* pypy3*
+          CIBW_BUILD: cp39-* cp310-* cp311-* cp312-* cp313-* cp314-* pp3*
           CIBW_ENABLE: "cpython-prerelease"
           CIBW_ARCHS: "auto64"
 
