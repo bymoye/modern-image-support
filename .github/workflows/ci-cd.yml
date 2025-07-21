@@ -96,7 +96,7 @@ jobs:
           CIBW_BUILD: cp39-* cp310-* cp311-* cp312-* cp313-* cp314-* pypy3*
           CIBW_ARCHS: "auto64"
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: wheels-${{ matrix.os }}
           path: ./wheelhouse/*.whl
@@ -123,7 +123,7 @@ jobs:
       - name: Build sdist
         run: python -m build --sdist
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: sdist
           path: dist/*.tar.gz
