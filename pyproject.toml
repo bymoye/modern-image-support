@@ -29,3 +29,15 @@ classifiers = [
 Homepage = "https://github.com/bymoye/modern-image-support"
 Repository = "https://github.com/bymoye/modern-image-support"
 "Bug Tracker" = "https://github.com/bymoye/modern-image-support/issues"
+
+[project.optional-dependencies]
+dev = [
+    "setuptools==80.9.0",
+    "wheel==0.45.1", 
+    "cython==3.1.2",
+    "build>=1.0.0",
+    "cibuildwheel>=2.16.0",
+]
+test = [
+    "pytest>=7.0.0",
+]
